@@ -1,53 +1,63 @@
-const header = document.querySelector(".site-header");
-const navToggle = document.querySelector(".nav-toggle");
-const navLinks = document.querySelectorAll(".site-nav a");
+const body = document.body;
+const menuToggle = document.querySelector(".menu-toggle");
+const mobileNav = document.querySelector(".mobile-nav");
 const revealItems = document.querySelectorAll(".reveal");
-const contactForm = document.querySelector(".contact-form");
+const newsletterForm = document.querySelector(".newsletter-form");
+const formNote = document.querySelector(".form-note");
 
-function updateHeader() {
-  header.classList.toggle("scrolled", window.scrollY > 24);
-}
-
-navToggle.addEventListener("click", () => {
-  const isOpen = header.classList.toggle("nav-open");
-  navToggle.setAttribute("aria-expanded", String(isOpen));
-  navToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+menuToggle.addEventListener("click", () => {
+  const isOpen = body.classList.toggle("menu-open");
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+  menuToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
 });
 
-navLinks.forEach((link) => {
+mobileNav.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", () => {
-    header.classList.remove("nav-open");
-    navToggle.setAttribute("aria-expanded", "false");
-    navToggle.setAttribute("aria-label", "Open navigation");
+    body.classList.remove("menu-open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Open navigation");
   });
 });
 
-const observer = new IntersectionObserver(
+const revealObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
-      }
+      if (!entry.isIntersecting) return;
+
+      entry.target.classList.add("in-view");
+      revealObserver.unobserve(entry.target);
     });
   },
-  { threshold: 0.16 }
+  {
+    threshold: 0.14,
+    rootMargin: "0px 0px -8% 0px"
+  }
 );
 
-revealItems.forEach((item) => observer.observe(item));
-
-contactForm.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const button = contactForm.querySelector("button");
-  button.textContent = "Request Sent";
-  button.disabled = true;
-
-  window.setTimeout(() => {
-    contactForm.reset();
-    button.textContent = "Send Request";
-    button.disabled = false;
-  }, 2200);
+revealItems.forEach((item, index) => {
+  item.style.transitionDelay = `${Math.min(index % 6, 5) * 70}ms`;
+  revealObserver.observe(item);
 });
 
-updateHeader();
-window.addEventListener("scroll", updateHeader, { passive: true });
+newsletterForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const button = newsletterForm.querySelector("button");
+  button.disabled = true;
+  button.textContent = "Subscribed";
+  formNote.textContent = "Thank you. You are now on the Coverenta list.";
+
+  window.setTimeout(() => {
+    newsletterForm.reset();
+    button.disabled = false;
+    button.textContent = "Subscribe";
+  }, 2400);
+});
+
+window.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && body.classList.contains("menu-open")) {
+    body.classList.remove("menu-open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Open navigation");
+  }
+});

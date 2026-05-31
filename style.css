@@ -10,6 +10,7 @@
   --max: 1440px;
   --gutter: clamp(20px, 4.8vw, 72px);
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --acid: #d7d7cf;
 }
 
 * {
@@ -191,16 +192,32 @@ body.menu-open .mobile-nav {
 }
 
 .hero-image {
-  background: url("https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=2400&q=88") center 28% / cover;
-  filter: grayscale(1) contrast(1.08);
+  background: url("https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=2400&q=92") center 22% / cover;
+  filter: grayscale(1) contrast(1.28) brightness(0.78);
   transform: scale(1.04);
   animation: heroDrift 24000ms var(--ease) infinite alternate;
 }
 
 .hero-shade {
   background:
-    linear-gradient(180deg, rgba(0, 0, 0, 0.16), rgba(0, 0, 0, 0.32) 45%, rgba(0, 0, 0, 0.72)),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.42), transparent 54%);
+    radial-gradient(circle at 68% 18%, rgba(255, 255, 255, 0.13), transparent 26%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.22), rgba(0, 0, 0, 0.4) 45%, rgba(0, 0, 0, 0.82)),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.62), transparent 58%);
+}
+
+.hero::after,
+.story::after,
+.newsletter::after {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 4px 4px;
+  mix-blend-mode: overlay;
+  opacity: 0.42;
 }
 
 .hero-copy,
@@ -338,10 +355,26 @@ h3 {
 }
 
 .product-card {
+  position: relative;
   grid-column: span 4;
   display: grid;
   gap: 22px;
   min-width: 0;
+}
+
+.product-card::before {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  z-index: -1;
+  width: 42%;
+  height: 34%;
+  content: "";
+  border-top: 1px solid var(--black);
+  border-left: 1px solid var(--black);
+  opacity: 0;
+  transition: opacity 520ms var(--ease), transform 520ms var(--ease);
+  transform: translate(10px, 10px);
 }
 
 .product-card.tall {
@@ -360,9 +393,9 @@ h3 {
 
 .product-card img {
   aspect-ratio: 3 / 4.35;
-  filter: grayscale(1);
+  filter: grayscale(1) contrast(1.28) brightness(0.78);
   background: var(--mist);
-  transition: filter 700ms var(--ease), transform 700ms var(--ease);
+  transition: filter 800ms var(--ease), transform 800ms var(--ease);
 }
 
 .product-card.wide img {
@@ -370,8 +403,13 @@ h3 {
 }
 
 .product-card:hover img {
-  filter: grayscale(0.76) contrast(1.04);
-  transform: scale(1.018);
+  filter: grayscale(0.88) contrast(1.42) brightness(0.72);
+  transform: scale(1.026);
+}
+
+.product-card:hover::before {
+  opacity: 1;
+  transform: translate(0, 0);
 }
 
 .product-card h3 {
@@ -389,6 +427,7 @@ h3 {
 }
 
 .story {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(320px, 0.78fr);
   min-height: 100vh;
@@ -398,8 +437,8 @@ h3 {
 
 .story-image {
   min-height: 620px;
-  background: url("https://images.unsplash.com/photo-1495385794356-15371f348c31?auto=format&fit=crop&w=1400&q=88") center / cover;
-  filter: grayscale(1) contrast(1.06);
+  background: url("https://images.unsplash.com/photo-1485462537746-965f33f7f6a7?auto=format&fit=crop&w=1500&q=92") center / cover;
+  filter: grayscale(1) contrast(1.34) brightness(0.72);
 }
 
 .story-copy {
@@ -473,9 +512,21 @@ h3 {
 }
 
 .lookbook-grid figure {
+  position: relative;
   min-width: 0;
   margin: 0;
   background: var(--black);
+  overflow: hidden;
+}
+
+.lookbook-grid figure::after {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  background: linear-gradient(180deg, transparent 52%, rgba(0, 0, 0, 0.32));
+  opacity: 0;
+  transition: opacity 700ms var(--ease);
 }
 
 .lookbook-grid figure:nth-child(2) {
@@ -484,8 +535,18 @@ h3 {
 
 .lookbook-grid img {
   aspect-ratio: 3 / 4;
-  filter: grayscale(1);
-  opacity: 0.94;
+  filter: grayscale(1) contrast(1.3) brightness(0.74);
+  opacity: 0.96;
+  transition: transform 900ms var(--ease), filter 900ms var(--ease);
+}
+
+.lookbook-grid figure:hover img {
+  filter: grayscale(0.9) contrast(1.45) brightness(0.68);
+  transform: scale(1.035);
+}
+
+.lookbook-grid figure:hover::after {
+  opacity: 1;
 }
 
 .lookbook-grid figcaption {
@@ -495,6 +556,7 @@ h3 {
 }
 
 .newsletter {
+  position: relative;
   display: grid;
   place-items: center;
   min-height: 78vh;
