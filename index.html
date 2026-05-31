@@ -3,196 +3,278 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coverenta | The Essential Wardrobe</title>
-  <meta name="description" content="Coverenta luxury fashion homepage inspired by editorial black and white minimalism.">
+  <title>Coverenta | Enterprise Growth Intelligence</title>
+  <meta name="description" content="Coverenta is a global SaaS and consulting platform for revenue operations, executive intelligence, and enterprise growth systems.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Libre+Bodoni:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="page-loader" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
 
   <header class="site-header" id="top">
-    <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+    <a class="brand" href="#top" aria-label="Coverenta home">
+      <span class="brand-icon"></span>
+      Coverenta
+    </a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="#platform">Platform</a>
+      <a href="#insights">Insights</a>
+      <a href="#advisory">Advisory</a>
+      <a href="#enterprise">Enterprise</a>
+    </nav>
+    <div class="header-actions">
+      <a class="ghost-link" href="#enterprise">Sign in</a>
+      <a class="nav-cta" href="#contact">Request demo</a>
+    </div>
+    <button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false">
       <span></span>
       <span></span>
     </button>
-    <a class="brand" href="#top" aria-label="Coverenta home">Coverenta</a>
-    <nav class="desktop-nav" aria-label="Primary navigation">
-      <a href="#collection">Collection</a>
-      <a href="#story">Story</a>
-      <a href="#lookbook">Lookbook</a>
-      <a href="#newsletter">Subscribe</a>
-    </nav>
   </header>
 
-  <nav class="mobile-nav" aria-label="Mobile navigation">
-    <a href="#collection">Collection</a>
-    <a href="#story">Brand Story</a>
-    <a href="#lookbook">Lookbook</a>
-    <a href="#newsletter">Newsletter</a>
+  <nav class="mobile-menu" aria-label="Mobile navigation">
+    <a href="#platform">Platform</a>
+    <a href="#insights">Insights</a>
+    <a href="#advisory">Advisory</a>
+    <a href="#enterprise">Enterprise</a>
+    <a href="#contact">Request demo</a>
   </nav>
 
   <main>
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-image" aria-hidden="true"></div>
-      <div class="hero-shade" aria-hidden="true"></div>
-      <div class="hero-copy reveal">
-        <p class="kicker">Winter 01 / Urban Black</p>
-        <h1 id="hero-title">Coverenta</h1>
-        <p>Severe silhouettes, oversized volume, black leather, and the city after dark.</p>
+    <section class="hero">
+      <div class="hero-orb hero-orb-one" aria-hidden="true"></div>
+      <div class="hero-orb hero-orb-two" aria-hidden="true"></div>
+      <div class="hero-content reveal">
+        <p class="eyebrow">Global Revenue Intelligence Platform</p>
+        <h1>Scale decisions with executive-grade operating intelligence.</h1>
+        <p class="hero-lede">Coverenta combines SaaS analytics, AI workflows, and senior advisory systems for companies building durable revenue engines across markets.</p>
+        <div class="hero-actions">
+          <a class="primary-button" href="#contact">Request executive demo</a>
+          <a class="secondary-button" href="#platform">Explore platform</a>
+        </div>
       </div>
-      <a class="hero-link reveal" href="#collection">Discover the collection</a>
-    </section>
 
-    <section class="editorial-intro section">
-      <p class="section-number reveal">01</p>
-      <div class="intro-grid">
-        <h2 class="reveal">A wardrobe reduced to its most exact form.</h2>
-        <div class="intro-text reveal">
-          <p>Coverenta is built around silence, structure, and the authority of restraint. The pieces are not designed to announce themselves. They are designed to stay.</p>
-          <p>Each garment is considered as an object of daily ritual: precise when worn alone, complete when layered, and deliberate from every angle.</p>
+      <div class="hero-visual reveal" aria-label="Revenue intelligence dashboard preview">
+        <div class="window-bar">
+          <span></span>
+          <span></span>
+          <span></span>
+          <p>Command Center</p>
+        </div>
+        <div class="dashboard-grid">
+          <section class="metric-card">
+            <p>Annualized Pipeline</p>
+            <strong>$48.6M</strong>
+            <span class="positive">+28.4%</span>
+          </section>
+          <section class="metric-card">
+            <p>Expansion Revenue</p>
+            <strong>64%</strong>
+            <span class="positive">+11.2%</span>
+          </section>
+          <section class="metric-card wide">
+            <div class="chart-header">
+              <p>Market Momentum</p>
+              <span>Live</span>
+            </div>
+            <div class="chart-lines" aria-hidden="true">
+              <i style="height: 36%"></i>
+              <i style="height: 58%"></i>
+              <i style="height: 44%"></i>
+              <i style="height: 72%"></i>
+              <i style="height: 65%"></i>
+              <i style="height: 84%"></i>
+              <i style="height: 78%"></i>
+              <i style="height: 92%"></i>
+            </div>
+          </section>
+          <section class="signal-card">
+            <p>Priority Signal</p>
+            <strong>North America Enterprise</strong>
+            <span>Renewal risk reduced by 17% after workflow automation.</span>
+          </section>
         </div>
       </div>
     </section>
 
-    <section class="collection section" id="collection">
-      <div class="section-title reveal">
-        <p class="kicker">Collection</p>
-        <h2>Objects of Dress</h2>
-      </div>
-
-      <div class="masonry-grid">
-        <article class="product-card tall reveal">
-          <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=90" alt="Model in a black oversized urban fashion silhouette">
-          <div>
-            <span>Look 01</span>
-            <h3>Oversized Coat</h3>
-            <p>Expanded shoulders, dropped volume, black wool cut for the street.</p>
-          </div>
-        </article>
-
-        <article class="product-card reveal">
-          <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1000&q=90" alt="Monochrome fashion model in stark city styling">
-          <div>
-            <span>Look 02</span>
-            <h3>Knife Jacket</h3>
-            <p>A narrow black line, strict lapel, and deliberate tension.</p>
-          </div>
-        </article>
-
-        <article class="product-card offset reveal">
-          <img src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=1000&q=90" alt="Avant garde black and white fashion portrait">
-          <div>
-            <span>Look 03</span>
-            <h3>Black Column</h3>
-            <p>Long, severe, and almost architectural in profile.</p>
-          </div>
-        </article>
-
-        <article class="product-card reveal">
-          <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1000&q=90" alt="Dark luxury fashion styling in a stark monochrome look">
-          <div>
-            <span>Look 04</span>
-            <h3>Shadow Dress</h3>
-            <p>Soft black fabric held inside a rigid editorial frame.</p>
-          </div>
-        </article>
-
-        <article class="product-card wide reveal">
-          <img src="https://images.unsplash.com/photo-1485462537746-965f33f7f6a7?auto=format&fit=crop&w=1400&q=90" alt="Urban monochrome fashion campaign image">
-          <div>
-            <span>Look 05</span>
-            <h3>City Uniform</h3>
-            <p>Matte surfaces, hard shadows, and the attitude of late-night Paris.</p>
-          </div>
-        </article>
+    <section class="logo-strip reveal" aria-label="Trusted by global teams">
+      <span>Trusted operating layer for global teams</span>
+      <div>
+        <p>NOVA</p>
+        <p>HELIO</p>
+        <p>ORBITAL</p>
+        <p>ATLAS</p>
+        <p>MONO</p>
       </div>
     </section>
 
-    <section class="story" id="story">
-      <div class="story-image reveal" aria-hidden="true"></div>
-      <div class="story-copy reveal">
-        <p class="section-number">02</p>
-        <p class="kicker">Brand Story</p>
-        <h2>Born from the idea that luxury should feel inevitable.</h2>
-        <p>Coverenta began as a study in subtraction. Remove the trend, the excess, the ornamental gesture, and what remains must be stronger: fabric, proportion, movement, memory.</p>
-        <p>The house works in a restrained monochrome language, allowing cut and material to carry the emotion. Nothing is casual. Nothing is over-explained.</p>
+    <section class="section metrics" id="insights">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Executive Metrics</p>
+        <h2>Designed for boardroom velocity.</h2>
       </div>
-    </section>
-
-    <section class="why section" aria-labelledby="why-title">
-      <p class="section-number reveal">03</p>
-      <h2 id="why-title" class="reveal">Why Choose Coverenta</h2>
-      <div class="why-list">
+      <div class="metric-row">
         <article class="reveal">
-          <span>Material</span>
-          <p>Natural fibers selected for handfeel, recovery, and a controlled fall on the body.</p>
+          <strong>$120M+</strong>
+          <span>Revenue systems analyzed across enterprise deployments.</span>
         </article>
         <article class="reveal">
-          <span>Proportion</span>
-          <p>Every shoulder, hem, and closure is tuned to create a modern vertical line.</p>
+          <strong>4.8x</strong>
+          <span>Faster executive reporting cycles after implementation.</span>
         </article>
         <article class="reveal">
-          <span>Longevity</span>
-          <p>Pieces are designed to be repeated, repaired, restyled, and kept in rotation.</p>
+          <strong>99.9%</strong>
+          <span>Infrastructure availability target for mission-critical teams.</span>
         </article>
       </div>
     </section>
 
-    <section class="lookbook section" id="lookbook">
-      <div class="section-title reveal">
-        <p class="kicker">Lookbook</p>
-        <h2>Stillness in Motion</h2>
+    <section class="section platform" id="platform">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Platform</p>
+        <h2>One system for strategy, signal, and execution.</h2>
       </div>
-      <div class="lookbook-grid">
-        <figure class="reveal">
-          <img src="https://images.unsplash.com/photo-1495385794356-15371f348c31?auto=format&fit=crop&w=1000&q=90" alt="High contrast monochrome fashion portrait">
-          <figcaption>Concrete light / black volume</figcaption>
-        </figure>
-        <figure class="reveal">
-          <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=90" alt="Dark urban runway inspired fashion look">
-          <figcaption>Street coat / oversized shoulder</figcaption>
-        </figure>
-        <figure class="reveal">
-          <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1000&q=90" alt="Sharp monochrome fashion editorial">
-          <figcaption>Night uniform / hard silhouette</figcaption>
-        </figure>
+      <div class="feature-grid">
+        <article class="feature-card large reveal">
+          <div class="feature-visual flow-visual" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+            <i></i>
+          </div>
+          <h3>Unified operating model</h3>
+          <p>Connect revenue, product, finance, and customer data into a single executive view with source-level confidence.</p>
+        </article>
+        <article class="feature-card reveal">
+          <div class="feature-visual pulse-visual" aria-hidden="true"></div>
+          <h3>AI market signals</h3>
+          <p>Surface account risk, expansion moments, competitive shifts, and regional demand patterns before they become lagging reports.</p>
+        </article>
+        <article class="feature-card reveal">
+          <div class="feature-visual stack-visual" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <h3>Workflow governance</h3>
+          <p>Deploy decision workflows with approvals, audit trails, controls, and enterprise-ready permissions.</p>
+        </article>
       </div>
     </section>
 
-    <section class="newsletter" id="newsletter">
-      <div class="newsletter-inner reveal">
-        <p class="kicker">Newsletter</p>
-        <h2>Receive private notes from the atelier.</h2>
-        <form class="newsletter-form" action="#" method="post">
-          <label for="email">Email address</label>
-          <div class="field-row">
-            <input id="email" type="email" name="email" placeholder="name@example.com" required>
-            <button type="submit">Subscribe</button>
-          </div>
-          <p class="form-note" aria-live="polite"></p>
+    <section class="section advisory" id="advisory">
+      <div class="advisory-copy reveal">
+        <p class="eyebrow">Strategic Advisory</p>
+        <h2>Consulting depth, product speed.</h2>
+        <p>Coverenta pairs senior operating advisors with a productized intelligence layer. Strategy does not sit in a slide deck. It becomes dashboards, workflows, cadence, and measurable operating leverage.</p>
+      </div>
+      <div class="advisory-panel reveal">
+        <div class="panel-line">
+          <span>01</span>
+          <p>Revenue architecture and GTM diagnostics</p>
+        </div>
+        <div class="panel-line">
+          <span>02</span>
+          <p>Executive reporting systems and KPI design</p>
+        </div>
+        <div class="panel-line">
+          <span>03</span>
+          <p>AI workflow deployment and change management</p>
+        </div>
+        <div class="panel-line">
+          <span>04</span>
+          <p>Board-level operating rhythm and growth governance</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section intelligence">
+      <div class="intelligence-shell reveal">
+        <div class="map-panel" aria-hidden="true">
+          <span class="node node-a"></span>
+          <span class="node node-b"></span>
+          <span class="node node-c"></span>
+          <span class="node node-d"></span>
+          <svg viewBox="0 0 700 360" role="img" aria-label="Global operating network">
+            <path d="M89 240 C220 92, 426 94, 614 148"></path>
+            <path d="M132 128 C284 260, 428 280, 582 204"></path>
+            <path d="M224 72 C322 152, 394 188, 524 86"></path>
+          </svg>
+        </div>
+        <div class="intelligence-copy">
+          <p class="eyebrow">Global Intelligence</p>
+          <h2>Built for distributed leadership teams.</h2>
+          <p>Monitor performance across markets, currencies, channels, and business units without waiting for end-of-month reporting cycles.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section enterprise" id="enterprise">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Enterprise Ready</p>
+        <h2>Security, reliability, and clarity at scale.</h2>
+      </div>
+      <div class="enterprise-grid">
+        <article class="reveal">
+          <span>SSO</span>
+          <h3>Identity controls</h3>
+          <p>SAML, role-based access, scoped permissions, and secure team provisioning.</p>
+        </article>
+        <article class="reveal">
+          <span>API</span>
+          <h3>Composable stack</h3>
+          <p>Connect CRM, data warehouse, billing, customer success, finance, and BI systems.</p>
+        </article>
+        <article class="reveal">
+          <span>SOC</span>
+          <h3>Audit posture</h3>
+          <p>Designed for enterprise procurement reviews, governance standards, and executive oversight.</p>
+        </article>
+        <article class="reveal">
+          <span>24/7</span>
+          <h3>Global support</h3>
+          <p>Priority response, implementation leadership, and operating cadence enablement.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta-section" id="contact">
+      <div class="cta-card reveal">
+        <p class="eyebrow">Executive Demo</p>
+        <h2>Build the operating system behind your next $10M.</h2>
+        <p>Share your growth goals and we will map the data systems, workflows, and advisory model required to reach them.</p>
+        <form class="demo-form" action="#" method="post">
+          <input type="email" name="email" placeholder="work@email.com" aria-label="Work email" required>
+          <button type="submit">Request demo</button>
         </form>
+        <p class="form-status" aria-live="polite"></p>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div>
-      <a class="footer-brand" href="#top">Coverenta</a>
-      <p>Essential clothing, edited to black and white.</p>
+      <a class="brand footer-brand" href="#top">
+        <span class="brand-icon"></span>
+        Coverenta
+      </a>
+      <p>Enterprise growth intelligence for ambitious leadership teams.</p>
     </div>
-    <div class="footer-links">
-      <a href="#collection">Collection</a>
-      <a href="#story">Story</a>
-      <a href="#lookbook">Lookbook</a>
-      <a href="#newsletter">Newsletter</a>
+    <div>
+      <h4>Platform</h4>
+      <a href="#platform">Capabilities</a>
+      <a href="#insights">Insights</a>
+      <a href="#enterprise">Security</a>
     </div>
-    <div class="footer-meta">
-      <span>Paris / Shanghai / Online</span>
-      <span>&copy; 2026 Coverenta</span>
+    <div>
+      <h4>Company</h4>
+      <a href="#advisory">Advisory</a>
+      <a href="#contact">Contact</a>
+      <a href="#top">Back to top</a>
     </div>
+    <p class="copyright">&copy; 2026 Coverenta. All rights reserved.</p>
   </footer>
 
   <script src="script.js"></script>

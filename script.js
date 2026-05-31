@@ -1,21 +1,21 @@
 const body = document.body;
-const menuToggle = document.querySelector(".menu-toggle");
-const mobileNav = document.querySelector(".mobile-nav");
+const menuButton = document.querySelector(".menu-button");
+const mobileMenu = document.querySelector(".mobile-menu");
 const revealItems = document.querySelectorAll(".reveal");
-const newsletterForm = document.querySelector(".newsletter-form");
-const formNote = document.querySelector(".form-note");
+const demoForm = document.querySelector(".demo-form");
+const formStatus = document.querySelector(".form-status");
 
-menuToggle.addEventListener("click", () => {
+menuButton.addEventListener("click", () => {
   const isOpen = body.classList.toggle("menu-open");
-  menuToggle.setAttribute("aria-expanded", String(isOpen));
-  menuToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+  menuButton.setAttribute("aria-expanded", String(isOpen));
+  menuButton.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
 });
 
-mobileNav.querySelectorAll("a").forEach((link) => {
+mobileMenu.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", () => {
     body.classList.remove("menu-open");
-    menuToggle.setAttribute("aria-expanded", "false");
-    menuToggle.setAttribute("aria-label", "Open navigation");
+    menuButton.setAttribute("aria-expanded", "false");
+    menuButton.setAttribute("aria-label", "Open menu");
   });
 });
 
@@ -23,41 +23,39 @@ const revealObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
-
       entry.target.classList.add("in-view");
       revealObserver.unobserve(entry.target);
     });
   },
   {
-    threshold: 0.14,
-    rootMargin: "0px 0px -8% 0px"
+    threshold: 0.16,
+    rootMargin: "0px 0px -10% 0px"
   }
 );
 
 revealItems.forEach((item, index) => {
-  item.style.transitionDelay = `${Math.min(index % 6, 5) * 70}ms`;
+  item.style.transitionDelay = `${Math.min(index % 5, 4) * 65}ms`;
   revealObserver.observe(item);
 });
 
-newsletterForm.addEventListener("submit", (event) => {
+demoForm.addEventListener("submit", (event) => {
   event.preventDefault();
-
-  const button = newsletterForm.querySelector("button");
+  const button = demoForm.querySelector("button");
   button.disabled = true;
-  button.textContent = "Subscribed";
-  formNote.textContent = "Thank you. You are now on the Coverenta list.";
+  button.textContent = "Request sent";
+  formStatus.textContent = "Thanks. Our strategy team will contact you shortly.";
 
   window.setTimeout(() => {
-    newsletterForm.reset();
+    demoForm.reset();
     button.disabled = false;
-    button.textContent = "Subscribe";
+    button.textContent = "Request demo";
   }, 2400);
 });
 
 window.addEventListener("keydown", (event) => {
   if (event.key === "Escape" && body.classList.contains("menu-open")) {
     body.classList.remove("menu-open");
-    menuToggle.setAttribute("aria-expanded", "false");
-    menuToggle.setAttribute("aria-label", "Open navigation");
+    menuButton.setAttribute("aria-expanded", "false");
+    menuButton.setAttribute("aria-label", "Open menu");
   }
 });
